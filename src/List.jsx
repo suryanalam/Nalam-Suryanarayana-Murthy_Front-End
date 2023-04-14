@@ -36,7 +36,7 @@ const WrappedListComponent = ({
 
   useEffect(() => {
     setSelectedIndex(null);
-  }, [items]); // changed dependency array to setSelectedIndex
+  }, [setSelectedIndex]); // changed dependency array to setSelectedIndex
 
   const handleClick = index => {
     setSelectedIndex(index);
@@ -57,9 +57,9 @@ const WrappedListComponent = ({
 };
 
 WrappedListComponent.propTypes = {
-  items: PropTypes.array(PropTypes.shapeOf({
+  items: PropTypes.arrayOf(PropTypes.shape({      //prototype of items(array) was modified
     text: PropTypes.string.isRequired,
-  })),
+  })),  
 };
 
 WrappedListComponent.defaultProps = {
