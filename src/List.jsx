@@ -11,7 +11,7 @@ const WrappedSingleListItem = ({
   return (
     <li
       style={{ backgroundColor: isSelected ? 'green' : 'red'}}
-      onClick={onClickHandler(index)}
+      onClick={()=>onClickHandler(index)}                           // calling the onClickHandler inside an anonymous function to follow the render stack.
     >
       {text}
     </li>
