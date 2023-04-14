@@ -1,4 +1,3 @@
-
 import React, { useState, useEffect, memo } from 'react';
 import PropTypes from 'prop-types';
 
@@ -32,7 +31,7 @@ const SingleListItem = memo(WrappedSingleListItem);
 const WrappedListComponent = ({
   items,
 }) => {
-  const [setSelectedIndex, selectedIndex] = useState();
+  const [selectedIndex, setSelectedIndex] = useState();  // modified the destructing of useState()
 
   useEffect(() => {
     setSelectedIndex(null);

@@ -1,9 +1,11 @@
 import './App.css';
 import List from './List'
+import data from "./items.json";
+
 function App() {
   return (
     <div className="App">
-        <List />
+        <List items= {data}/>
     </div>
   );
 }
