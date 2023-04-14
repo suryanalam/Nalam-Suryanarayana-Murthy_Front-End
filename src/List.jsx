@@ -49,6 +49,7 @@ const WrappedListComponent = ({
           text={item.text}
           index={index}
           isSelected={selectedIndex}
+          key = {index}                      // passing key value while mapping the items
         />
       ))}
     </ul>
