@@ -8,9 +8,16 @@ const WrappedSingleListItem = ({
   onClickHandler,
   text,
 }) => {
+
+  const [buffer, setBuffer] = useState(false);    //creating a new state to hold boolean values for changing bg color.
+
+  useEffect(() => {
+    index === isSelected ? setBuffer(true) : setBuffer(false);      //if index value in isSelected and index value in index is equal 
+  }, [index, isSelected]);                                          //set the buffer value true or set buffer value false
+
   return (
     <li
-      style={{ backgroundColor: isSelected ? 'green' : 'red'}}
+      style={{ backgroundColor: buffer ? 'green' : 'red'}}          // if buffer is true then background color is green else background color is red 
       onClick={()=>onClickHandler(index)}                           // calling the onClickHandler inside an anonymous function to follow the render stack.
     >
       {text}
